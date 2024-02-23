@@ -1,0 +1,36 @@
+.formContainer button {
+  cursor: pointer;
+}
+
+.formContainer button:disabled {
+  cursor: default;
+}
+
+.locationForm {
+  flex: 1;
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
+}
+
+.locationForm input {
+  border: none;
+  border-radius: 5px;
+  background: #979aaa url("../assets/magnifying_glass.svg");
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: 10px center;
+  text-indent: 25px;
+  color: #fff;
+  font-size: 15px;
+  padding: 10px;
+  outline: none;
+  width: 90%;
+}
+
+
+.locationForm input::placeholder {
+  font-size: 14px;
+  color: #fff;
+}

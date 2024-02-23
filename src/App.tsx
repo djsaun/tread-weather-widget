@@ -14,7 +14,7 @@ function App() {
   return (
     <div className={styles.container}>
       <div className={styles.formContainer}>
-        <LocationForm />
+        <LocationForm onSubmit={fetchWeatherData} location={location} setLocation={setLocation} />
         {weatherData && <UnitToggle/>}
       </div>
       <div>
