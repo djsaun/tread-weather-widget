@@ -69,10 +69,10 @@ export const useWeatherData = (): UseWeatherDataProps => {
       if (!response.ok) {
         console.log(response);
         if (response.status.toString().startsWith('4')) {
-          throw new Error(`${response.status} Client error. Please ensure your credentials are correct and try again.`)
+          throw new Error(`Error code: ${response.status}. Client error. Please ensure your credentials are correct and try again.`)
         }
         if (response.status.toString().startsWith('5')) {
-          throw new Error(`${response.status } Server error. The Rapid Realtime Weather API is currently unavailable. Please try again later.`)
+          throw new Error(`Error code: ${response.status }. Server error. The Rapid Realtime Weather API is currently unavailable. Please try again later.`)
         }
       }
 

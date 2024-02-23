@@ -1,7 +1,9 @@
 import {useState, useEffect, useCallback} from 'react';
-import './App.css';
+import styles from './App.module.css';
 import {useWeatherData} from "./hooks/useWeatherData";
-
+import {LocationForm} from "./components/LocationForm";
+import {UnitToggle} from "./components/UnitToggle";
+import {WeatherDetails} from "./components/WeatherDetails";
 
 
 function App() {
@@ -10,7 +12,16 @@ function App() {
   console.log(weatherData);
 
   return (
-    <div className="App">
+    <div className={styles.container}>
+      <div className={styles.formContainer}>
+        <LocationForm />
+        {weatherData && <UnitToggle/>}
+      </div>
+      <div>
+        {errorMessage && <p className={styles.statusMessage}>{errorMessage}</p>}
+        {isLoading && <p className={styles.statusMessage}>Loading...</p>}
+        {weatherData && <WeatherDetails />}
+      </div>
     </div>
   );
 }

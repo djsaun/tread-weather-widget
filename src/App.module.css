@@ -1,0 +1,23 @@
+.container {
+  padding: 40px;
+  margin: 0 auto;
+  max-width: 500px;
+  background: #4c516d;
+  border-radius: 5px;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    align-items: baseline;
+  }
+}
+
+.statusMessage {
+  color: #fff;
+  font-size: 16px;
+}
