@@ -32,6 +32,7 @@ interface Location {
   lon: number;
   name: string;
   region: string;
+  tz_id: string;
 }
 
 export interface WeatherData {

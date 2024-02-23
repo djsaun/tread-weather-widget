@@ -12,7 +12,7 @@ interface WeatherDetailsProps {
   isImperial: boolean;
 }
 export const WeatherDetails: FC<WeatherDetailsProps> = ({weatherData, isImperial}) => {
-  const {name, country, region, localtime} = weatherData.location
+  const {name, country, region, localtime, tz_id} = weatherData.location
   const {text, icon} = weatherData.current.condition
   const {temp_f, temp_c, feelslike_f, feelslike_c, wind_mph, wind_kph, wind_dir, humidity, precip_in, precip_mm} = weatherData.current
 
@@ -20,9 +20,11 @@ export const WeatherDetails: FC<WeatherDetailsProps> = ({weatherData, isImperial
     <h1>{name}, {country === 'United States of America' ? region : country}</h1>
 
     <div className={styles.currentConditions}>
-      <p>{text}</p>
       <img src={icon} alt='' />
-      <p>{isImperial ? `${temp_f}° F` : `${temp_c}°C`}</p>
+      <div>
+        <p>{text}</p>
+        <p>{isImperial ? `${temp_f}° F` : `${temp_c}°C`}</p>
+      </div>
     </div>
 
     <div className={styles.moreDetails}>
@@ -56,6 +58,6 @@ export const WeatherDetails: FC<WeatherDetailsProps> = ({weatherData, isImperial
       </div>
     </div>
 
-    <p className={styles.lastUpdated}>Last updated: {localtime}</p>
+    <p className={styles.lastUpdated}>Last updated: {localtime} {tz_id}</p>
   </div>
 }
