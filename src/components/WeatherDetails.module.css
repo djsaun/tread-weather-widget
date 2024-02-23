@@ -16,7 +16,7 @@
   border-radius: 4px;
 
   @media screen and (max-width: 400px) {
-    flex-direction: column;
+    display: block;
   }
 }
 
@@ -24,6 +24,12 @@
   margin: 5px;
   font-size: 24px;
   font-weight: 700;
+}
+
+.currentConditions p:first-of-type {
+  @media screen and (max-width: 400px) {
+    margin-top: -10px;
+  }
 }
 
 .currentConditions img {
