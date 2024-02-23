@@ -20,7 +20,7 @@ function App() {
       <div>
         {errorMessage && <p className={styles.statusMessage}>{errorMessage}</p>}
         {isLoading && <p className={styles.statusMessage}>Loading...</p>}
-        {weatherData && <WeatherDetails />}
+        {weatherData && <WeatherDetails weatherData={weatherData} />}
       </div>
     </div>
   );
