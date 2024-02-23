@@ -38,7 +38,8 @@
   }
 }
 
-.moreDetails div {
+.moreDetails > div {
+  display: flex;
   background: #979aaa;
   border-radius: 4px;
   padding: 10px 15px;
