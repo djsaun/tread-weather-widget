@@ -1,28 +1,24 @@
-import {useState, useEffect, useCallback} from 'react';
 import styles from './App.module.css';
 import {useWeatherData} from "./hooks/useWeatherData";
 import {LocationForm} from "./components/LocationForm";
 import {UnitToggle} from "./components/UnitToggle";
 import {WeatherDetails} from "./components/WeatherDetails";
 
-
 function App() {
-  const {fetchWeatherData, weatherData, location, setLocation, isLoading, errorMessage} = useWeatherData()
-
-  console.log(weatherData);
+  const {fetchWeatherData, weatherData, location, setLocation, isLoading, errorMessage, isImperial, setIsImperial} = useWeatherData()
 
   return (
-    <div className={styles.container}>
+    <article className={styles.container}>
       <div className={styles.formContainer}>
         <LocationForm onSubmit={fetchWeatherData} location={location} setLocation={setLocation} />
-        {weatherData && <UnitToggle/>}
+        {weatherData && <UnitToggle isImperial={isImperial} setIsImperial={setIsImperial}/>}
       </div>
       <div>
         {errorMessage && <p className={styles.statusMessage}>{errorMessage}</p>}
         {isLoading && <p className={styles.statusMessage}>Loading...</p>}
-        {weatherData && <WeatherDetails weatherData={weatherData} />}
+        {weatherData && <WeatherDetails weatherData={weatherData} isImperial={isImperial} />}
       </div>
-    </div>
+    </article>
   );
 }
 

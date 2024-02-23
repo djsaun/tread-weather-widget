@@ -1,0 +1,59 @@
+.toggleContainer {
+  @media screen and (max-width: 500px) {
+    margin-top: 10px;
+  }
+}
+
+.toggleLabel {
+  display: inline-block;
+  width: 40px;
+  background-color: transparent;
+  color: #979aaa;
+  text-align: center;
+  font-size: 14px;
+  padding: 4px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.toggleLabel:first-of-type {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: 1px solid #979aaa;
+  border-right: 1px solid transparent;
+}
+
+.toggleLabel:last-of-type {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: 1px solid #979aaa;
+  border-left: 1px solid transparent;
+}
+
+.toggleLabel:hover {
+  background: #5f9ea0;
+  color: #fff;
+}
+
+.toggleLabel:first-of-type:hover {
+  border-right: 1px solid #979aaa;;
+}
+
+.toggleLabel:last-of-type:hover {
+  border-left: 1px solid #979aaa;;
+}
+
+.toggleInput {
+  position: absolute;
+  left: -999999px;
+  height: 1px;
+  width: 1px;
+  border: 0;
+  overflow: hidden;
+}
+
+.toggleInput:checked + .toggleLabel {
+  background: #5f9ea0;
+  color: #fff;
+  font-weight: 500;
+}

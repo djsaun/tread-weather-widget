@@ -46,6 +46,8 @@ interface UseWeatherDataProps  {
   setLocation: Dispatch<SetStateAction<string | number>>
   isLoading: boolean;
   errorMessage: string | null;
+  isImperial: boolean;
+  setIsImperial: Dispatch<SetStateAction<boolean>>
 }
 
 export const useWeatherData = (): UseWeatherDataProps => {
@@ -53,6 +55,7 @@ export const useWeatherData = (): UseWeatherDataProps => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null)
   const [location, setLocation] = useState<string | number>('')
+  const [isImperial, setIsImperial] = useState<boolean>(true)
 
   const fetchWeatherData = useCallback(async (location: string | number) => {
     try {
@@ -106,6 +109,8 @@ export const useWeatherData = (): UseWeatherDataProps => {
     location,
     setLocation,
     isLoading,
-    errorMessage
+    errorMessage,
+    isImperial,
+    setIsImperial
   }
 }
