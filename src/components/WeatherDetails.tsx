@@ -1,4 +1,5 @@
 import {FC} from 'react';
+import styles from './WeatherDetails.module.css'
 import {WeatherData} from "../hooks/useWeatherData";
 
 interface WeatherDetailsProps {
@@ -8,16 +9,16 @@ export const WeatherDetails: FC<WeatherDetailsProps> = ({weatherData}) => {
   const {name, country, region, localtime} = weatherData.location
   const {text, icon} = weatherData.current.condition
   const {temp_f, feelslike_f, wind_mph, wind_dir, humidity, precip_in} = weatherData.current
-  return <div>
+  return <div className={styles.weatherDetailsContainer}>
     <h1>{name}, {country === 'United States of America' ? region : country}</h1>
 
-    <div>
+    <div className={styles.currentConditions}>
       <p>{text}</p>
       <img src={icon} />
       <p>{`${temp_f}° F`}</p>
     </div>
 
-    <div>
+    <div className={styles.moreDetails}>
       <div>
         <p>Feels like:</p>
         <p>{`${feelslike_f}° F`}</p>
@@ -36,6 +37,6 @@ export const WeatherDetails: FC<WeatherDetailsProps> = ({weatherData}) => {
       </div>
     </div>
 
-    <p>Last updated: {localtime}</p>
+    <p className={styles.lastUpdated}>Last updated: {localtime}</p>
   </div>
 }
