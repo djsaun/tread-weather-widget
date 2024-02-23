@@ -44,8 +44,8 @@ function App() {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [isError, setIsError] = useState<string | null>(null)
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null)
-  
-  console.log(process.env.REACT_APP_RAPID_REALTIME_WEATHER_API_KEY);
+  const [location, setLocation] = useState<string | number>('')
+
   const fetchWeatherData = useCallback(async (location: string | number) => {
     try {
       setIsError(null)
@@ -81,6 +81,14 @@ function App() {
       setIsLoading(false)
     }
   }, [])
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(async (position) => {
+      const formattedCoordinates = `${position.coords.latitude.toFixed(2)},${position.coords.longitude.toFixed(2)}`
+      await fetchWeatherData(formattedCoordinates)
+      setLocation(formattedCoordinates)
+    });
+  }, [fetchWeatherData])
 
   console.log(weatherData);
 
