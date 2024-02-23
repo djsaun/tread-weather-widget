@@ -9,26 +9,21 @@ interface CurrentWeather {
   }
   feelslike_c: number;
   feelslike_f: number;
-  gust_kph: number;
-  gust_mph: number;
   humidity: number;
-  is_day: number;
   last_updated: string;
   precip_in: number;
   precip_mm: number;
   temp_c: number;
   temp_f: number;
-  wind_degree: number;
   wind_dir: string;
   wind_kph: number;
-  wind_mph: string;
+  wind_mph: number;
 }
 
 interface Location {
   country: string;
   lat: number;
   localtime: string;
-  localtime_epoch: number;
   lon: number;
   name: string;
   region: string;

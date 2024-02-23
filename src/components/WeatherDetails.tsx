@@ -23,7 +23,7 @@ export const WeatherDetails: FC<WeatherDetailsProps> = ({weatherData, isImperial
       <img src={icon} alt='' />
       <div>
         <p>{text}</p>
-        <p>{isImperial ? `${temp_f}° F` : `${temp_c}°C`}</p>
+        <p>{isImperial ? `${temp_f}°F` : `${temp_c}°C`}</p>
       </div>
     </div>
 
@@ -32,7 +32,7 @@ export const WeatherDetails: FC<WeatherDetailsProps> = ({weatherData, isImperial
         <img src={temperature} alt={''} />
         <div>
           <p>Feels like:</p>
-          <p>{isImperial ? `${feelslike_f}° F` : `${feelslike_c}°C`}</p>
+          <p>{isImperial ? `${feelslike_f}°F` : `${feelslike_c}°C`}</p>
         </div>
       </div>
       <div>
