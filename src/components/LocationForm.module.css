@@ -29,6 +29,10 @@
   width: 90%;
 }
 
+.locationForm:only-child input {
+  width: 95%;
+}
+
 
 .locationForm input::placeholder {
   font-size: 14px;

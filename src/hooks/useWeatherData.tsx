@@ -66,7 +66,6 @@ export const useWeatherData = (): UseWeatherDataProps => {
         }
       })
       if (!response.ok) {
-        console.log(response);
         if (response.status === 429) {
           throw new Error(`Error code ${response.status}. Client error. You've exceeded the amount of allowed requests to the Rapid Realtime Weather API. Please wait a bit before trying again.`)
         }
@@ -79,7 +78,6 @@ export const useWeatherData = (): UseWeatherDataProps => {
       }
 
       const data = await response.json()
-      console.log('data', data);
       setWeatherData(data)
     } catch (e) {
       if (e instanceof Error) {
