@@ -16,7 +16,7 @@ This project was built using React and TypeScript with [Create React App](https:
 
 All weather fetching logic and state was placed in the [useWeatherData](https://github.com/djsaun/tread-weather-widget/blob/main/src/hooks/useWeatherData.tsx) custom hook. This hook was imported in [App.tsx](https://github.com/djsaun/tread-weather-widget/blob/main/src/App.tsx) and the relevant data was passed as props to the App component's children components. Given the small scope of this project and the lack of deeply nested components, this state management setup seemed like a reasonable approach. However, I recognize that this approach would not scale well for larger applications that require passing props through multiple nested components. Had I implemented dark mode or the ability to change languages, which would have required passing the same information to each component, I would have strongly considered using [React Context](https://react.dev/learn/passing-data-deeply-with-context) as the state management solution for this application. I did not consider using Redux or MobX for this application as both solutions seemed like overkill for an app of this size and scale.
 
-Please feel free to play around with the production version of this widget at [https://tread-weather-widget-8ejf4tx15-djsaun1.vercel.app/](https://tread-weather-widget-8ejf4tx15-djsaun1.vercel.app/).
+Please feel free to play around with the production version of this widget at [https://tread-weather-widget.vercel.app](https://tread-weather-widget.vercel.app).
 
 ## Getting Started
 
