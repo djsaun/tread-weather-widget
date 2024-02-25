@@ -48,7 +48,7 @@ When weather data is present in the widget, an imperial/metric toggle will displ
 The widget is fully responsive and includes weather-related iconography.
 
 ### Error Handling
-The app [successfully handles 4xx and 5xx errors](https://github.com/djsaun/tread-weather-widget/blob/main/src/hooks/useWeatherData.tsx#L68-L88) and will display a human-readable error message should a request fail.
+The app [successfully handles 4xx and 5xx errors](https://github.com/djsaun/tread-weather-widget/blob/main/src/hooks/useWeatherData.tsx#L68-L90) and will display a human-readable error message should a request fail.
 
 <img src="./public/tread_weather_widget_error.png" alt="Weather widget with error" />
 

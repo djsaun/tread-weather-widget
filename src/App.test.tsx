@@ -1,6 +1,6 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import { useWeatherData } from './hooks/useWeatherData';
+import {render, screen} from '@testing-library/react';
+import {useWeatherData} from './hooks/useWeatherData';
 import App from './App';
 
 jest.mock('./hooks/useWeatherData');
@@ -9,7 +9,7 @@ const mockedUseWeatherData = jest.mocked(useWeatherData)
 export const mockWeatherData = {
   current: {
     cloud: 10,
-    condition: { code: 100, icon: '', text: 'Clear' },
+    condition: {code: 100, icon: '', text: 'Clear'},
     feelslike_c: -1,
     feelslike_f: 30,
     humidity: 20,
@@ -61,7 +61,7 @@ describe('App component', () => {
       isLoading: true,
     });
 
-    render(<App />);
+    render(<App/>);
 
     expect(screen.getByText(loadingText)).toBeInTheDocument();
     expect(screen.queryByText(errorMessage)).not.toBeInTheDocument()
@@ -75,7 +75,7 @@ describe('App component', () => {
       errorMessage,
     });
 
-    render(<App />);
+    render(<App/>);
 
     expect(screen.getByText(errorMessage)).toBeInTheDocument();
     expect(screen.queryByText(loadingText)).not.toBeInTheDocument()
@@ -88,7 +88,7 @@ describe('App component', () => {
       weatherData: mockWeatherData,
     });
 
-    render(<App />);
+    render(<App/>);
 
     expect(screen.getByText('Chicago, Illinois')).toBeInTheDocument();
     expect(screen.queryByText(loadingText)).not.toBeInTheDocument()

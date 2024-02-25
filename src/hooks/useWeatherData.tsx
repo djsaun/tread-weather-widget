@@ -35,7 +35,7 @@ export interface WeatherData {
   location: Location
 }
 
-interface UseWeatherDataProps  {
+interface UseWeatherDataProps {
   fetchWeatherData: (location: (string | number)) => Promise<void>
   weatherData: WeatherData | null;
   location: string | number;
@@ -71,7 +71,7 @@ export const useWeatherData = (): UseWeatherDataProps => {
         } else if (response.status.toString().startsWith('4')) {
           throw new Error(`Error code: ${response.status}: Client error. Please ensure your credentials are correct and try again.`)
         } else if (response.status.toString().startsWith('5')) {
-          throw new Error(`Error code: ${response.status }: Server error. The Rapid Realtime Weather API is currently unavailable. Please try again later.`)
+          throw new Error(`Error code: ${response.status}: Server error. The Rapid Realtime Weather API is currently unavailable. Please try again later.`)
         } else {
           throw new Error(`Unexpected error occurred. Status code ${response.status}`)
         }

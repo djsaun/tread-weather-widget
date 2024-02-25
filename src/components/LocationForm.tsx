@@ -7,12 +7,13 @@ interface LocationFormProps {
   setLocation: Dispatch<SetStateAction<string | number>>;
 }
 
-export const LocationForm: FC<LocationFormProps> =({onSubmit, location, setLocation}) => {
+export const LocationForm: FC<LocationFormProps> = ({onSubmit, location, setLocation}) => {
   return <form onSubmit={(e) => {
     e.preventDefault()
     onSubmit(location)
   }}
                className={styles.locationForm}>
-    <input required type={'text'} aria-label={'Enter a location'} placeholder={'Enter a location'} onChange={e => setLocation(e.target.value)} value={location} />
+    <input required type={'text'} aria-label={'Enter a location'} placeholder={'Enter a location'}
+           onChange={e => setLocation(e.target.value)} value={location}/>
   </form>
 }

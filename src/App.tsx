@@ -10,13 +10,13 @@ function App() {
   return (
     <article className={styles.container}>
       <div className={styles.formContainer}>
-        <LocationForm onSubmit={fetchWeatherData} location={location} setLocation={setLocation} />
+        <LocationForm onSubmit={fetchWeatherData} location={location} setLocation={setLocation}/>
         {weatherData && <UnitToggle isImperial={isImperial} setIsImperial={setIsImperial}/>}
       </div>
       <div>
         {errorMessage && <p className={styles.statusMessage}>{errorMessage}</p>}
         {isLoading && <p className={styles.statusMessage}>Loading...</p>}
-        {weatherData && <WeatherDetails weatherData={weatherData} isImperial={isImperial} />}
+        {weatherData && <WeatherDetails weatherData={weatherData} isImperial={isImperial}/>}
       </div>
     </article>
   );

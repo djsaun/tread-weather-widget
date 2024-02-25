@@ -1,11 +1,11 @@
-import { render, screen } from '@testing-library/react';
-import { WeatherDetails } from './WeatherDetails';
-import { mockWeatherData } from '../App.test'
+import {render, screen} from '@testing-library/react';
+import {WeatherDetails} from './WeatherDetails';
+import {mockWeatherData} from '../App.test'
 
 describe('WeatherDetails', () => {
   it('should render weather details correctly with metric units', () => {
     render(
-      <WeatherDetails weatherData={mockWeatherData} isImperial={false} />
+      <WeatherDetails weatherData={mockWeatherData} isImperial={false}/>
     );
 
     expect(screen.getByText('0°C')).toBeInTheDocument();
@@ -16,7 +16,7 @@ describe('WeatherDetails', () => {
 
   it('should render weather details correctly with imperial units', () => {
     render(
-      <WeatherDetails weatherData={mockWeatherData} isImperial={true} />
+      <WeatherDetails weatherData={mockWeatherData} isImperial={true}/>
     );
 
     expect(screen.getByText('32°F')).toBeInTheDocument();
