@@ -57,29 +57,29 @@ The app [successfully handles 4xx and 5xx errors](https://github.com/djsaun/trea
 ### Testing
 I added testing to ensure that the weather widget shows loading, error, and success states when expected. I also added tests to ensure that the imperial to metric conversion works properly.
 
-### Future Todos
+## Future Todos
 
-#### Improved Error Handling
+### Improved Error Handling
 While the Rapid Realtime Weather API's responses did include status codes, they did not include status text, which made it difficult to dynamically display relevant error messages. If I had more time, I would have tailored custom error messages for frequently-encountered errors to provide a better user experience when requests fail.
 
 I would also have liked to have added monitoring via Datadog to determine which errors are occurring most often and to track the frequency of errors over time.
 
-#### Accessibility
+### Accessibility
 I ensured that the widget had some accessibility features, but given more time, I would like to navigate the widget with a screen reader to ensure that I'm providing a consistent experience for all users.
 
 I would also like to ensure that the color scheme has enough color contrast to provide a better experience for visually-impaired users.
 
-#### Cross-Browser Testing
+### Cross-Browser Testing
 Due to time constraints, I was only able to test the widget in Chromium and Firefox browsers. I would like to view the widget in Microsoft Edge, etc. to ensure that the widget is providing a consistent experience across all environments.
 
-#### Additional Unit and Integration Tests
+### Additional Unit and Integration Tests
 I would like to add additional tests to ensure that the functionality around getting the user's location from the geolocation API and getting the user's weather conditions from the Rapid Realtime Weather API continue to work as expected.
 
-#### Dynamic Background Colors
+### Dynamic Background Colors
 I would have liked to have had the widget's background color reflect the current weather conditions (e.g. a gradient from yellow to orange for sunny, a gradient from dark blue to purple for rainy, etc.), but I did not have time to implement this functionality.
 
-#### Google Maps Integration
+### Google Maps Integration
 I considered adding a Google Maps instance to the widget that would dynamically pan to the queried location upon a successful response from the Rapid Realtime Weather API. I would have also liked to look into querying the Rapid Realtime Weather API by selecting a point on the Google Map directly.
 
-#### Random Location Button
+### Random Location Button
 I considered adding a "Random Location" button that would query a random city name or random latitude and longitude and return the current weather conditions from that location.
