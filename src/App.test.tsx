@@ -69,7 +69,6 @@ describe('App component', () => {
   });
 
   it('renders an error message when errorMessage is present', () => {
-
     mockedUseWeatherData.mockReturnValueOnce({
       ...useWeatherData(),
       errorMessage,
